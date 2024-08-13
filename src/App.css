@@ -1,67 +1,149 @@
-/* App.css */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
+.App {
+  text-align: left;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-.navbar {
-  margin-bottom: 20px;
+.content {
+  padding: 20px;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
   display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping of elements */
+  justify-content: flex-start;
 }
 
-.card {
-  margin: 15px 0;
-}
-
-/* New CSS for Image Grid */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-}
-
-.grid-item img {
+.main-video-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  max-width: 1280px; /* Limit the maximum width */
+  margin-bottom: 20px; /* Space below the main video container */
 }
 
 .main-video {
-  flex: 2;
-  padding: 10px;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin-right: 20px; /* Add space on the right side */
 }
 
-.video-list {
+.main-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.main-video-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: left; /* Align title to the left */
+}
+
+/* Search bar styles */
+.search-bar {
+  margin: 20px;
+  display: flex;
+  justify-content: center; /* Center the search bar */
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 720px; /* Limit the width of the search bar */
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
   flex: 1;
   padding: 10px;
-  border-left: 1px solid #ddd;
-  overflow-y: auto;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar button {
+  background-color: hwb(206 4% 13%); /* Bootstrap primary color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Video list styles */
+.video-list {
+  flex-shrink: 0; /* Prevent the video list from shrinking */
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: flex-start; /* Align items to the start */
+  margin-left: 20px; /* Space between the video and list */
+  width: 420px; /* Fixed width for video list */
 }
 
 .video-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  margin-bottom: 15px; /* Space between video items */
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .video-item img {
-  width: 100%;
-  border-radius: 4px;
+  width: 245px; /* Adjust width as needed */
+  height: 138px; /* Adjust height to maintain the 16:9 aspect ratio */
+  object-fit: cover;
+  margin-right: 10px; /* Space between thumbnail and title */
 }
 
-.video-item:hover {
-  background-color: #f0f0f0;
+.video-info {
+  display: flex;
+  flex-direction: column;
+  max-width: 420px; /* Limit width to avoid overflow */
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-block-end: 5px;
+  width: 205px;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words */
+}
+
+.video-views {
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack main video and list vertically on small screens */
+  }
+
+  .main-video-container {
+    max-width: 100%;
+  }
+
+  .video-list {
+    margin-left: 0; /* Remove left margin on small screens */
+    width: 100%; /* Allow video list to take full width on small screens */
+  }
 }
