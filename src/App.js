@@ -6,6 +6,7 @@ import YouTubeVideos from "./YouTubeVideos"; // Import your YouTubeVideos compon
 import "./App.css";
 import AppTest from "./AppTest";
 import ClockFunction from "./ClockFunction";
+import SearchPhotos from "./SearchPhotos";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<AppTest />} />
+            <Route path="/photos" element={<SearchPhotos />} />
             <Route path="/videos" element={<YouTubeVideos />} />
             <Route path="/clock" element={<ClockFunction />} />
           </Routes>
