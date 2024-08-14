@@ -7,7 +7,7 @@ import AppTest from "./AppTest";
 import ClockFunction from "./ClockFunction";
 import SearchPhotos from "./SearchPhotos";
 import Counter from "./Counter";
-import Form from "./Form";
+import MyForm from "./MyForm";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route path="/videos" element={<YouTubeVideos />} />
             <Route path="/clock" element={<ClockFunction />} />
             <Route path="/Counter" element={<Counter />} />
-            <Route path="/Form" element={<Form />} />
+            <Route path="/Form" element={<MyForm />} />
             {/* Gunakan Counter di sini */}
           </Routes>
         </div>
