@@ -1,12 +1,13 @@
-// App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navigation from "./Navigation";
-import YouTubeVideos from "./YouTubeVideos"; // Import your YouTubeVideos component
+import YouTubeVideos from "./YouTubeVideos";
 import "./App.css";
 import AppTest from "./AppTest";
 import ClockFunction from "./ClockFunction";
 import SearchPhotos from "./SearchPhotos";
+import Counter from "./Counter";
+import Form from "./Form";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             <Route path="/photos" element={<SearchPhotos />} />
             <Route path="/videos" element={<YouTubeVideos />} />
             <Route path="/clock" element={<ClockFunction />} />
+            <Route path="/Counter" element={<Counter />} />
+            <Route path="/Form" element={<Form />} />
+            {/* Gunakan Counter di sini */}
           </Routes>
         </div>
       </div>

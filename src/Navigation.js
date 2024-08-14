@@ -19,6 +19,12 @@ function Navigation() {
         <li>
           <Link to="/clock">Clock</Link>
         </li>
+        <li>
+          <Link to="/Counter">Button</Link>
+        </li>
+        <li>
+          <Link to="/Form">Form</Link>
+        </li>
         {/* Add more links as needed */}
       </ul>
     </nav>
